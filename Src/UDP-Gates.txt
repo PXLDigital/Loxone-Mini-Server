@@ -4,5 +4,6 @@ bodem sensor2: 	50002
 gas sensor: 	50003
 melexis:	50004
 weerstation:	50005
+homestation:  50006
 
 Miniserver IP: 192.168.1.77

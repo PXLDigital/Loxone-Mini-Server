@@ -1,0 +1,8 @@
+argiculture:    50000
+bodem sensor1: 	50001
+bodem sensor2: 	50002
+gas sensor: 	50003
+melexis:	50004
+weerstation:	50005
+
+Miniserver IP: 192.168.1.77

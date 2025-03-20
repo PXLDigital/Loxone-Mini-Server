@@ -1,84 +1,61 @@
 # Loxone Air Base Extension
 
-De Loxone Air Base Extension breidt de functionaliteit van de Miniserver uit door de integratie van maximaal 128 Loxone Air-apparaten mogelijk te maken. :contentReference[oaicite:0]{index=0}
+De Loxone Air Base Extension is een uitbreiding die de Loxone Miniserver in staat stelt om draadloze apparaten te integreren via Loxone Air. Dit maakt de installatie en configuratie van draadloze apparaten eenvoudig binnen je Loxone Smart Home.
 
 ## Inhoudsopgave
 
 - [Installatie](#installatie)
+- [Aansluitingen](#aansluitingen)
 - [Apparaten koppelen](#apparaten-koppelen)
-- [Apparaten automatisch koppelen](#apparaten-automatisch-koppelen)
-- [Handmatig koppelmodus activeren](#handmatig-koppelmodus-activeren)
-- [Apparaten ontkoppelen](#apparaten-ontkoppelen)
-- [Batterijgevoede apparaten activeren](#batterijgevoede-apparaten-activeren)
-- [Mesh-technologie](#mesh-technologie)
+- [Gebruik van de Air Base Extension](#gebruik-van-de-air-base-extension)
+- [Extra functies](#extra-functies)
 
 ## Installatie
 
-1. **Montage**: Monteer de Air Base Extension op een DIN-rail in een geschikte behuizing. :contentReference[oaicite:1]{index=1}&#8203;:contentReference[oaicite:2]{index=2}
+1. **Montage**:
+   - Bevestig de Air Base Extension op een veilige en goed geventileerde plaats in de buurt van de Miniserver.
+   - Zorg ervoor dat de Air Base Extension beschermd is tegen vocht en oververhitting.
 
-2. **Aansluitingen**:
-   - **Voeding**: :contentReference[oaicite:3]{index=3}&#8203;:contentReference[oaicite:4]{index=4}
-   - **Loxone Link**: :contentReference[oaicite:5]{index=5}&#8203;:contentReference[oaicite:6]{index=6}
-   - **Antenne**: :contentReference[oaicite:7]{index=7} :contentReference[oaicite:8]{index=8}&#8203;:contentReference[oaicite:9]{index=9}
+2. **Aansluiting op de Miniserver**:
+   - Verbind de Air Base Extension met de Miniserver via de seriële poort (RS232 of RS485).
+   - Controleer of de verbinding goed is en dat de Air Base Extension goed functioneert.
 
-3. **Inbedrijfstelling**: :contentReference[oaicite:10]{index=10}&#8203;:contentReference[oaicite:11]{index=11}
+## Aansluitingen
+
+| Klem    | Functie                  |
+|---------|--------------------------|
+| 24V     | Voeding (24V DC)         |
+| GND     | Massa                    |
+| RX      | Ontvangstpin (RS232/RS485)|
+| TX      | Zenderpin (RS232/RS485)  |
+
+- Zorg ervoor dat de aansluiting correct wordt gemaakt om schade aan het apparaat te voorkomen.
 
 ## Apparaten koppelen
 
 1. **Koppelmodus activeren**:
-   - **Nieuw apparaat**: :contentReference[oaicite:12]{index=12}&#8203;:contentReference[oaicite:13]{index=13}
-   - **Bestaand apparaat**: :contentReference[oaicite:14]{index=14}&#8203;:contentReference[oaicite:15]{index=15}
+   - Bij het inschakelen van een nieuw apparaat wordt de koppelmodus automatisch geactiveerd.
+   - Voor een bestaand apparaat: druk op de knop van de Air Base Extension om de koppelmodus handmatig te starten.
 
-2. **Apparaat zoeken en koppelen**:
-   - :contentReference[oaicite:16]{index=16}&#8203;:contentReference[oaicite:17]{index=17}
-   - :contentReference[oaicite:18]{index=18}&#8203;:contentReference[oaicite:19]{index=19}
-   - :contentReference[oaicite:20]{index=20}&#8203;:contentReference[oaicite:21]{index=21}
+2. **Koppelen via Loxone Config**:
+   - Open **Loxone Config** en zoek naar de Air Base Extension.
+   - Selecteer "Air-apparaat zoeken" en start het koppelproces.
+   - Selecteer het apparaat dat je wilt koppelen en voeg dit toe aan de configuratie.
 
-3. **Configuratie opslaan**: :contentReference[oaicite:22]{index=22}&#8203;:contentReference[oaicite:23]{index=23}
+3. **Opslaan en testen**:
+   - Sla de configuratie op en stuur de instellingen naar de Miniserver.
+   - Test de koppeling door het apparaat via de Loxone App of Config te bedienen.
 
-## Apparaten automatisch koppelen
+## Gebruik van de Air Base Extension
 
-1. **Automatische koppelmodus activeren**:
-   - :contentReference[oaicite:24]{index=24}&#8203;:contentReference[oaicite:25]{index=25}
+- **Draadloze communicatie**: De Air Base Extension maakt het mogelijk om draadloze apparaten via Loxone Air te bedienen.
+- **Betrouwbare verbinding**: Dankzij de Air-technologie is de communicatie betrouwbaar en snel.
+- **Flexibiliteit**: Voeg eenvoudig apparaten toe aan je Loxone systeem zonder dat extra bekabeling nodig is.
 
-2. **Apparaat toevoegen**:
-   - :contentReference[oaicite:26]{index=26}&#8203;:contentReference[oaicite:27]{index=27}
-   - :contentReference[oaicite:28]{index=28}&#8203;:contentReference[oaicite:29]{index=29}
+## Extra functies
 
-3. **Configuratie opslaan**: :contentReference[oaicite:30]{index=30}&#8203;:contentReference[oaicite:31]{index=31}
+- **LED-indicator**: De Air Base Extension heeft een LED-indicator die de status van de verbinding aangeeft.
+- **Air-apparaten**: Ondersteunt verschillende Loxone Air-apparaten zoals sensoren, schakelaars en dimmers.
+- **Geen extra software nodig**: Alle configuratie wordt gedaan via Loxone Config.
 
-## Handmatig koppelmodus activeren
-
-Afhankelijk van het apparaat en de stroomvoorziening zijn er verschillende methoden om de koppelmodus handmatig te activeren:
-
-- **Batterijgevoede apparaten met koppelknop**: :contentReference[oaicite:32]{index=32}&#8203;:contentReference[oaicite:33]{index=33}
-
-- **Apparaten met permanente voeding en koppelknop**: :contentReference[oaicite:34]{index=34}&#8203;:contentReference[oaicite:35]{index=35}
-
-- **Apparaten met permanente voeding zonder koppelknop**: :contentReference[oaicite:36]{index=36}&#8203;:contentReference[oaicite:37]{index=37}
-
-## Apparaten ontkoppelen
-
-1. **Selecteer apparaat**: :contentReference[oaicite:38]{index=38}&#8203;:contentReference[oaicite:39]{index=39}
-
-2. **Apparaat verwijderen**: :contentReference[oaicite:40]{index=40}&#8203;:contentReference[oaicite:41]{index=41}
-
-## Batterijgevoede apparaten activeren
-
-:contentReference[oaicite:42]{index=42}&#8203;:contentReference[oaicite:43]{index=43}
-
-1. **Apparaat wakker maken**:
-   - :contentReference[oaicite:44]{index=44}&#8203;:contentReference[oaicite:45]{index=45}
-   - :contentReference[oaicite:46]{index=46}&#8203;:contentReference[oaicite:47]{index=47}
-
-2. **Handmatig wakker maken**: :contentReference[oaicite:48]{index=48}&#8203;:contentReference[oaicite:49]{index=49}
-
-## Mesh-technologie
-
-:contentReference[oaicite:50]{index=50}&#8203;:contentReference[oaicite:51]{index=51}
-
-- **Bereikuitbreiding**: :contentReference[oaicite:52]{index=52}&#8203;:contentReference[oaicite:53]{index=53}
-
-- **Beperkingen**: Communicatie via meerdere repeaters kan tot tijdvertragingen leiden. Als een apparaat
-::contentReference[oaicite:54]{index=54}
- 
+Meer details: [Loxone Air Base Extension](https://www.loxone.com/enen/kb/air-base-extension/)

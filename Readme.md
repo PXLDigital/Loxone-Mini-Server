@@ -1,113 +1,113 @@
 # Loxone Demo Koffer
 
-Dit project betreft een demo koffer waarin sensordata via UDP wordt ontvangen, verwerkt, en gevisualiseerd via de Loxone App. De sensoren die worden gebruikt, komen van Loxone zelf, en we maken gebruik van de Loxone Air- en Tree-Base, evenals het Loxone weerstation, de drukventielen, en de comfortsensor. Het doel van dit project is om een werkend voorbeeld te creëren van een slim systeem dat gebruik maakt van de Loxone Miniserver om data te verzamelen, te verwerken en in real-time weer te geven.
+Deze `README.md` beschrijft het Loxone Demo Koffer project waarin data van verschillende Loxone-sensoren wordt ontvangen via UDP en gevisualiseerd in de Loxone App. Dit project maakt gebruik van zowel Air- als Tree-technologie van Loxone. Het biedt een praktische demonstratie van de mogelijkheden van het Loxone systeem binnen een portable koffer.
 
 ## Inhoudsopgave
 
-- [Installatie](#installatie)
-- [Benodigdheden](#benodigdheden)
-- [Configuratie](#configuratie)
-- [Verwerking van Sensordata](#verwerking-van-sensordata)
-- [Gebruik van de Loxone App](#gebruik-van-de-loxone-app)
-- [Apparaten en Sensoren](#apparaten-en-sensoren)
-- [Extra functies](#extra-functies)
-- [Meer Informatie](#meer-informatie)
+- [Overzicht](#overzicht)
+- [Hardwarecomponenten](#hardwarecomponenten)
+- [Gebruikte Loxone-componenten](#gebruikte-loxone-componenten)
+- [Netwerkcommunicatie (UDP)](#netwerkcommunicatie-udp)
+- [Integratie met Loxone Config & App](#integratie-met-loxone-config--app)
+- [Opbouw van de GitHub-repo](#opbouw-van-de-github-repo)
+- [Installatie en Setup](#installatie-en-setup)
+- [Toekomstige uitbreidingen](#toekomstige-uitbreidingen)
+- [Bronnen](#bronnen)
 
-## Installatie
+---
 
-1. **Voorbereiding van de Loxone Miniserver**:
-   - Zorg ervoor dat de Loxone Miniserver correct is geïnstalleerd en geconfigureerd.
-   - Verbind de Miniserver met je netwerk zodat deze toegankelijk is voor zowel de apparaten als de app.
+## Overzicht
 
-2. **Verbinding met Air- en Tree-Base**:
-   - Verbind de Loxone Air- en Tree-Base met de Miniserver om draadloze apparaten te integreren.
-   - Zorg ervoor dat de verbinding stabiel is en dat de apparaten goed gekoppeld zijn.
+De Loxone Demo Koffer is ontworpen als een educatieve en demonstratieve tool waarmee gebruikers kunnen leren werken met de Loxone Miniserver, Air & Tree Extension, en verschillende sensoren. De sensordata wordt via UDP ontvangen en live verwerkt om weergegeven te worden in de Loxone App. Dit biedt inzicht in automatiseringsprocessen en data-integratie met het Loxone-systeem.
 
-3. **Sensoren aansluiten**:
-   - Verbind de sensoren (weerstation, drukventielen, en comfortsensor) met de Miniserver via de Air- of Tree-Base.
-   - Volg de instructies in de Loxone Config om deze sensoren toe te voegen en te configureren.
+## Hardwarecomponenten
 
-4. **Instellen van UDP-communicatie**:
-   - Configureer de Miniserver voor het ontvangen van UDP-berichten van de sensoren.
-   - Zorg ervoor dat de gegevens die via UDP worden verzonden correct worden ontvangen en verwerkt door de Miniserver.
+- Loxone Miniserver (Gen 1 of 2)
+- Loxone Air Base Extension
+- Loxone Tree Extension
+- Loxone Weather Station
+- Loxone Comfort Sensor (binnenklimaat)
+- Loxone Drukventielen
+- Power supply module
+- UDP-sensor controller (extern of ingebouwd)
+- Netwerkrouter of -switch
+- Behuizing: robuuste koffer met interne bedrading
 
-## Benodigdheden
+## Gebruikte Loxone-componenten
 
-- **Loxone Miniserver**: De centrale besturingseenheid voor alle Loxone-apparaten.
-- **Loxone Air- en Tree-Base**: Verantwoordelijk voor de draadloze communicatie met sensoren en apparaten.
-- **Weerstation van Loxone**: Voor het verzamelen van meteorologische gegevens zoals temperatuur, luchtvochtigheid, en luchtdruk.
-- **Drukventielen van Loxone**: Voor het regelen van de luchtdruk in een systeem.
-- **Comfortsensor van Loxone**: Voor het meten van temperatuur, luchtvochtigheid, en andere omgevingsparameters.
-- **App voor visualisatie**: De Loxone App voor het visualiseren van de sensordata en voor interactie met het systeem.
+### Weather Station
 
-## Configuratie
+- Biedt real-time gegevens over wind, regen, temperatuur, helderheid en luchtvochtigheid.
+- Wordt gekoppeld via Air-technologie en stuurt regelmatig data door naar de Miniserver.
 
-1. **Loxone Config**:
-   - Open **Loxone Config** om het systeem te configureren.
-   - Voeg de verschillende apparaten (weerstation, drukventielen, comfortsensor) toe via de Loxone Config interface.
-   - Maak de verbinding tussen de Miniserver en de sensoren via Air of Tree-technologie.
-   - Stel de UDP-communicatie in zodat de ontvangen sensordata correct verwerkt kan worden.
+### Comfort Sensor Air
 
-2. **Loxone App**:
-   - Configureer de Loxone App voor het visualiseren van de sensordata.
-   - Maak gebruik van de app om de gegevens in real-time te bekijken en de aangesloten apparaten te bedienen.
-   - Configureer meldingen en alarmen om op de hoogte te blijven van veranderingen in de sensordata.
+- Meet temperatuur, luchtvochtigheid en CO2-niveaus binnen.
+- Kan ook als bewegingssensor fungeren.
+- Maakt gebruik van de Air Base Extension.
 
-## Verwerking van Sensordata
+### Drukventielen
 
-De sensordata die via UDP wordt ontvangen, wordt verwerkt om inzicht te krijgen in de omgevingscondities. De gegevens die worden ontvangen omvatten:
+- Worden gebruikt voor demonstraties met lucht- of waterdruk.
+- Worden via digitale uitgangen van de Miniserver aangestuurd.
 
-- **Weerstation**: Temperatuur, luchtvochtigheid, luchtdruk.
-- **Drukventielen**: De status van het ventiel en de luchtdrukinstellingen.
-- **Comfortsensor**: Binnenklimaatparameters zoals temperatuur, luchtvochtigheid, etc.
+## Netwerkcommunicatie (UDP)
 
-De Miniserver verwerkt deze gegevens en maakt ze beschikbaar voor de Loxone App. Eventueel kunnen er regels worden ingesteld die bepaalde acties uitvoeren op basis van de ontvangen data.
+In dit project worden externe sensoren of microcontrollers gebruikt die data verzenden via het UDP-protocol naar het netwerk waarop de Miniserver zich bevindt.
 
-## Gebruik van de Loxone App
+### UDP Ontvangen in Loxone:
 
-De Loxone App biedt een interface voor het visualiseren van de sensordata en het regelen van de aangesloten apparaten. In de app kun je:
+- In Loxone Config wordt een virtuele UDP-ingang aangemaakt.
+- Het formaat van het bericht moet overeenkomen met de geconfigureerde parser.
+- Voorbeeld van een UDP-pakket: `T=21.5;H=45.2;CO2=380`
+- Met virtuele ingangen en String-parsing worden waarden automatisch geüpdatet in de visualisatie.
 
-- De actuele gegevens van het weerstation, de drukventielen en de comfortsensor bekijken.
-- Real-time wijzigingen in sensordata volgen.
-- Automatiseringen configureren die gebaseerd zijn op sensordata (bijvoorbeeld het openen van een drukventiel op basis van temperatuur).
-- Het systeem bedienen en aanpassen via de app.
+## Integratie met Loxone Config & App
 
-## Apparaten en Sensoren
+- In Loxone Config worden alle apparaten toegevoegd via de Air of Tree Extensions.
+- De ontvangen UDP-data wordt via virtuele ingangen in blokken (zoals de statusdisplay, analog monitor, etc.) gekoppeld.
+- Deze informatie wordt dan zichtbaar in de Loxone App onder het tabblad "Sensoren" of in aangepaste dashboards.
 
-### Loxone Weerstation
+## Opbouw van de GitHub-repo
 
-Het Loxone Weerstation verzamelt gegevens over het weer en het klimaat, zoals:
+GitHub-repo: [PXLDigital/Loxone-Mini-Server](https://github.com/PXLDigital/Loxone-Mini-Server)
 
-- **Temperatuur**
-- **Luchtvochtigheid**
-- **Luchtdruk**
+### Belangrijke folders:
 
-Deze gegevens kunnen worden gebruikt om automatisch acties uit te voeren, zoals het aanpassen van ventilatie of het openen/sluiten van ramen op basis van de weersomstandigheden.
+- `/docs`: bevat documentatie over het project en demonstraties.
+- `/udp_receiver`: voorbeeldcode voor een UDP-server in Python of C++.
+- `/loxone_config_exports`: voorbeelden van .LoxConfig bestanden of exports van Loxone Config.
+- `/images`: foto's of schema’s van de opstelling en de interne bedrading van de koffer.
 
-### Loxone Drukventielen
+## Installatie en Setup
 
-De Loxone Drukventielen worden gebruikt om de luchtdruk in een systeem te regelen. Dit kan worden ingezet in verschillende toepassingen, bijvoorbeeld in HVAC-systemen.
+1. Voeding aansluiten op Miniserver en Extensions.
+2. Apparaten koppelen:
+   - Start de koppelmodus in Loxone Config.
+   - Voeg het weerstation, comfort sensor en drukventielen toe.
+3. UDP-configuratie:
+   - Zet een virtueel UDP-apparaat op met de juiste poort en parsing regels.
+4. App layout bouwen:
+   - Voeg visualisatieblokken toe in Loxone Config.
+   - Synchroniseer met de Miniserver.
 
-### Loxone Comfortsensor
+## Toekomstige uitbreidingen
 
-De Loxone Comfortsensor meet de omgevingsomstandigheden, waaronder:
+- Logging en opslag van sensordata in een extern systeem (bijv. InfluxDB + Grafana).
+- Toevoegen van MQTT naast UDP voor bredere integratie.
+- Integratie met Home Assistant voor uitgebreide automatisering.
+- Live grafieken van temperatuur en CO2 in de app.
+- Toevoegen van geluidssignalen (buzzers) of verlichting (LED-strips) voor visuele/auditieve feedback.
+- Maken van een instructievideo voor gebruikers van de demo koffer.
 
-- **Temperatuur**
-- **Luchtvochtigheid**
-- **CO2-concentratie**
+## Bronnen
 
-Deze sensor is nuttig voor het monitoren van het binnenklimaat en kan bijvoorbeeld worden ingezet voor het automatisch regelen van de verwarming of luchtbehandeling.
+- [Loxone Air Base Extension](https://www.loxone.com/enen/kb/air-base-extension/)
+- [Loxone Tree Extension](https://www.loxone.com/enen/kb/tree-extension/)
+- [Loxone Weather Station](https://www.loxone.com/enen/kb/weather-station/)
+- [Loxone Comfort Sensor](https://www.loxone.com/enen/kb/comfort-sensor-air/)
+- [Officiële Loxone Config handleiding](https://www.loxone.com/enen/kb/loxone-config/)
 
-## Extra functies
+---
 
-- **Automatisering**: Gebruik de sensordata om slimme automatiseringen in te stellen, zoals het openen van een drukventiel wanneer de temperatuur boven een bepaalde drempel komt.
-- **Alarmen en meldingen**: Configureer meldingen voor wanneer bepaalde sensordata buiten de normale parameters vallen (bijvoorbeeld wanneer de luchtvochtigheid te hoog is).
-- **Meerdere sensoren**: Het systeem kan meerdere sensoren ondersteunen, wat het mogelijk maakt om meerdere omgevingsparameters in één systeem te integreren.
-
-## Meer Informatie
-
-Meer details over de Loxone Miniserver en de configuratie kun je vinden op de officiële Loxone GitHub-pagina:
-
-- [Loxone GitHub Repository](https://github.com/PXLDigital/Loxone-Mini-Server/tree/master)
-
-Dit project biedt inzicht in de integratie van Loxone-apparaten met een UDP-gebaseerde communicatie en visualisatie via de Loxone App. Het is een uitstekend voorbeeld van hoe Loxone-apparaten kunnen worden gebruikt in een real-time smart home scenario.
+Voor vragen of feedback, maak een issue aan op de GitHub-repo of contacteer het team van [PXL Digital](https://pxl.be/digital).

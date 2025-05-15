@@ -7,6 +7,7 @@ Deze `README.md` beschrijft het Loxone Demo Koffer project waarin data van versc
 - [Overzicht](#overzicht)
 - [Hardwarecomponenten](#hardwarecomponenten)
 - [Gebruikte Loxone-componenten](#gebruikte-loxone-componenten)
+- [Geïmplementeerde functies](#geïmplementeerde-functies)
 - [Netwerkcommunicatie (UDP)](#netwerkcommunicatie-udp)
 - [Integratie met Loxone Config & App](#integratie-met-loxone-config--app)
 - [Opbouw van de GitHub-repo](#opbouw-van-de-github-repo)
@@ -36,27 +37,29 @@ De Loxone Demo Koffer is ontworpen als een educatieve en demonstratieve tool waa
 ## Gebruikte Loxone-componenten
 
 ### Weather Station
-
 - Biedt real-time gegevens over wind, regen, temperatuur, helderheid en luchtvochtigheid.
 - Wordt gekoppeld via Air-technologie en stuurt regelmatig data door naar de Miniserver.
 
 ### Comfort Sensor Air
-
 - Meet temperatuur, luchtvochtigheid en CO2-niveaus binnen.
 - Kan ook als bewegingssensor fungeren.
 - Maakt gebruik van de Air Base Extension.
 
 ### Drukventielen
-
 - Worden gebruikt voor demonstraties met lucht- of waterdruk.
 - Worden via digitale uitgangen van de Miniserver aangestuurd.
+
+## Geïmplementeerde functies
+
+- **Alarmsysteem**: Geactiveerd bij detectie van aanwezigheid of raambreuk (bijvoorbeeld via comfort sensor of schakelcontact). Dit alarm kan visueel of akoestisch worden weergegeven via de app.
+- **Manuele sturing van ventielen**: Drie ventielen kunnen handmatig worden open- of dichtgedraaid via potentiometers. De ingestelde waarden worden weergegeven in de app.
+- **UDP-integratie**: Een UDP-verbinding is opgezet waarmee externe sensordata zoals temperatuur en vochtigheid (bijvoorbeeld voor agrarische toepassingen) binnenkomt en zichtbaar is in de app.
 
 ## Netwerkcommunicatie (UDP)
 
 In dit project worden externe sensoren of microcontrollers gebruikt die data verzenden via het UDP-protocol naar het netwerk waarop de Miniserver zich bevindt.
 
 ### UDP Ontvangen in Loxone:
-
 - In Loxone Config wordt een virtuele UDP-ingang aangemaakt.
 - Het formaat van het bericht moet overeenkomen met de geconfigureerde parser.
 - Voorbeeld van een UDP-pakket: `T=21.5;H=45.2;CO2=380`
@@ -64,16 +67,16 @@ In dit project worden externe sensoren of microcontrollers gebruikt die data ver
 
 ## Integratie met Loxone Config & App
 
-- In Loxone Config worden alle apparaten toegevoegd via de Air of Tree Extensions.
-- De ontvangen UDP-data wordt via virtuele ingangen in blokken (zoals de statusdisplay, analog monitor, etc.) gekoppeld.
-- Deze informatie wordt dan zichtbaar in de Loxone App onder het tabblad "Sensoren" of in aangepaste dashboards.
+- In **Loxone Config** worden alle apparaten toegevoegd via de Air of Tree Extensions.
+- De ontvangen UDP-data wordt via virtuele ingangen in blokken (zoals statusdisplay, analog monitor, etc.) gekoppeld.
+- Deze informatie wordt dan zichtbaar in de **Loxone App** onder het tabblad "Sensoren" of in aangepaste dashboards.
+- Alle functies zoals het alarm en de ventielsturing zijn ook toegankelijk via de app.
 
 ## Opbouw van de GitHub-repo
 
 GitHub-repo: [PXLDigital/Loxone-Mini-Server](https://github.com/PXLDigital/Loxone-Mini-Server)
 
 ### Belangrijke folders:
-
 - `/docs`: bevat documentatie over het project en demonstraties.
 - `/udp_receiver`: voorbeeldcode voor een UDP-server in Python of C++.
 - `/loxone_config_exports`: voorbeelden van .LoxConfig bestanden of exports van Loxone Config.
@@ -81,13 +84,13 @@ GitHub-repo: [PXLDigital/Loxone-Mini-Server](https://github.com/PXLDigital/Loxon
 
 ## Installatie en Setup
 
-1. Voeding aansluiten op Miniserver en Extensions.
-2. Apparaten koppelen:
+1. **Voeding aansluiten** op Miniserver en Extensions.
+2. **Apparaten koppelen**:
    - Start de koppelmodus in Loxone Config.
    - Voeg het weerstation, comfort sensor en drukventielen toe.
-3. UDP-configuratie:
+3. **UDP-configuratie**:
    - Zet een virtueel UDP-apparaat op met de juiste poort en parsing regels.
-4. App layout bouwen:
+4. **App layout bouwen**:
    - Voeg visualisatieblokken toe in Loxone Config.
    - Synchroniseer met de Miniserver.
 

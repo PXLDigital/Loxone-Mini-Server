@@ -79,8 +79,6 @@ GitHub-repo: [PXLDigital/Loxone-Mini-Server](https://github.com/PXLDigital/Loxon
 ### Belangrijke folders:
 - `/docs`: bevat documentatie over het project en demonstraties.
 - `/udp_receiver`: voorbeeldcode voor een UDP-server in Python of C++.
-- `/loxone_config_exports`: voorbeelden van .LoxConfig bestanden of exports van Loxone Config.
-- `/images`: foto's of schema’s van de opstelling en de interne bedrading van de koffer.
 
 ## Installatie en Setup
 
